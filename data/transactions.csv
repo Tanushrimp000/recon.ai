@@ -1,0 +1,4 @@
+order_id,expected_amount,payment_amount,settlement_amount,payment_status,settlement_status,exception_type,severity
+ORD-1042,1500,1500,1250,SUCCESS,PARTIAL,AMOUNT_MISMATCH,HIGH
+ORD-2001,1000,1000,990,SUCCESS,PARTIAL,AMOUNT_MISMATCH,LOW
+ORD-3001,5000,5000,4000,SUCCESS,PARTIAL,AMOUNT_MISMATCH,MEDIUM
