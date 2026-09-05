@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import HumanReview from './pages/HumanReview'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
@@ -7,9 +9,13 @@ import {
   FileSearch,
   ShieldCheck,
   Activity,
+  Sun,
+  Moon,
+  UserCheck,
 } from 'lucide-react'
 
 import Dashboard from './pages/Dashboard'
+import Evaluation from './pages/Evaluation'
 import Transactions from './pages/Transactions'
 import Investigations from './pages/Investigations'
 import Evidence from './pages/Evidence'
@@ -34,6 +40,11 @@ const navigation = [
     icon: BrainCircuit,
   },
   {
+    name: 'Human Review',
+    path: '/human-review',
+    icon: UserCheck,
+  },
+  {
     name: 'Evidence',
     path: '/evidence',
     icon: FileSearch,
@@ -43,12 +54,32 @@ const navigation = [
     path: '/policies',
     icon: ShieldCheck,
   },
+  {
+    name: 'Evaluation',
+    path: '/evaluation',
+    icon: Activity,
+  },
 ]
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('recon-theme') || 'dark'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('recon-theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) =>
+      currentTheme === 'dark' ? 'light' : 'dark'
+    )
+  }
+
   return (
     <BrowserRouter>
-      <div className="app">
+      <div className={`app ${theme}`}>
 
         {/* SIDEBAR */}
         <motion.aside
@@ -124,9 +155,31 @@ function App() {
 
           </nav>
 
-          {/* SYSTEM STATUS */}
+          {/* SIDEBAR BOTTOM */}
           <div className="sidebar-bottom">
 
+            {/* THEME TOGGLE */}
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              <span className="theme-toggle-icon">
+                {theme === 'dark' ? (
+                  <Sun size={16} />
+                ) : (
+                  <Moon size={16} />
+                )}
+              </span>
+
+              <span>
+                {theme === 'dark'
+                  ? 'Light Mode'
+                  : 'Dark Mode'}
+              </span>
+            </button>
+
+            {/* SYSTEM STATUS */}
             <div className="system-card">
 
               <div className="system-header">
@@ -192,6 +245,10 @@ function App() {
                 path="/investigations"
                 element={<Investigations />}
               />
+              <Route
+                path="/human-review"
+                 element={<HumanReview />}
+              />
 
               <Route
                 path="/evidence"
@@ -201,6 +258,11 @@ function App() {
               <Route
                 path="/policies"
                 element={<Policies />}
+              />
+
+              <Route
+                path="/evaluation"
+                element={<Evaluation />}
               />
 
             </Routes>

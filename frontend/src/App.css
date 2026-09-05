@@ -390,3 +390,377 @@ body {
     margin-left: 70px;
   }
 }
+
+/* =========================================
+   RECON.AI — THEME SYSTEM
+   ========================================= */
+
+/* ---------- DARK MODE ---------- */
+
+:root {
+  --bg-main: #080b12;
+  --bg-sidebar: rgba(12, 16, 25, 0.92);
+  --bg-card: rgba(18, 24, 35, 0.78);
+  --bg-card-solid: #121823;
+
+  --text-primary: #e8edf5;
+  --text-secondary: #8993a4;
+  --text-muted: #596273;
+
+  --border: rgba(255, 255, 255, 0.07);
+  --border-soft: rgba(255, 255, 255, 0.05);
+
+  --accent: #60a5fa;
+  --accent-blue: #3b82f6;
+
+  --hover: rgba(255, 255, 255, 0.045);
+
+  --shadow:
+    0 15px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ---------- LIGHT MODE ---------- */
+
+html[data-theme='light'] {
+  --bg-main: #f4f7fb;
+  --bg-sidebar: rgba(255, 255, 255, 0.94);
+
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-solid: #ffffff;
+
+  --text-primary: #172033;
+  --text-secondary: #536074;
+  --text-muted: #7b8799;
+
+  --border: rgba(15, 23, 42, 0.09);
+  --border-soft: rgba(15, 23, 42, 0.06);
+
+  --accent: #2563eb;
+  --accent-blue: #2563eb;
+
+  --hover: rgba(15, 23, 42, 0.045);
+
+  --shadow:
+    0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   GLOBAL THEME APPLICATION
+   ========================================= */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.app {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.main {
+  background:
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(59, 130, 246, 0.055),
+      transparent 25%
+    ),
+    var(--bg-main);
+
+  transition: background 0.25s ease;
+}
+
+
+/* =========================================
+   SIDEBAR THEME
+   ========================================= */
+
+.sidebar {
+  background: var(--bg-sidebar);
+  border-right-color: var(--border);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+html[data-theme='light'] .sidebar {
+  box-shadow:
+    4px 0 25px rgba(15, 23, 42, 0.035);
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+html[data-theme='light'] .logo-title {
+  color: #172033;
+}
+
+html[data-theme='light'] .logo small {
+  color: #7b8799;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+html[data-theme='light'] .nav-label {
+  color: #8994a6;
+}
+
+html[data-theme='light'] .nav-item {
+  color: #667085;
+}
+
+html[data-theme='light'] .nav-item:hover {
+  color: #1e293b;
+  background: rgba(37, 99, 235, 0.06);
+}
+
+html[data-theme='light'] .nav-item.active {
+  color: #1d4ed8;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.11),
+      rgba(37, 99, 235, 0.025)
+    );
+}
+
+
+/* =========================================
+   SYSTEM CARD
+   ========================================= */
+
+.system-card {
+  background: var(--bg-card);
+  border-color: var(--border);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+html[data-theme='light'] .system-header {
+  color: #344054;
+}
+
+html[data-theme='light'] .system-status {
+  color: #667085;
+}
+
+html[data-theme='light'] .sidebar-description {
+  color: #7b8799;
+}
+
+html[data-theme='light'] .version {
+  color: #98a2b3;
+}
+
+
+/* =========================================
+   THEME TOGGLE
+   ========================================= */
+
+.theme-toggle {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 12px;
+  padding: 0 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  background: var(--hover);
+  border-color: rgba(96, 165, 250, 0.25);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-icon {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: var(--accent);
+  background: rgba(59, 130, 246, 0.10);
+}
+
+
+/* =========================================
+   LIGHT MODE — GENERAL CARDS
+   ========================================= */
+
+html[data-theme='light'] .dashboard-card,
+html[data-theme='light'] .stat-card,
+html[data-theme='light'] .financial-impact-card {
+  background: var(--bg-card-solid);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================================
+   LIGHT MODE — TEXT
+   ========================================= */
+
+html[data-theme='light'] h1,
+html[data-theme='light'] h2,
+html[data-theme='light'] h3,
+html[data-theme='light'] strong {
+  color: var(--text-primary);
+}
+
+
+
+/* =========================================
+   LIGHT MODE — DASHBOARD
+   ========================================= */
+
+html[data-theme='light'] .dashboard {
+  color: var(--text-primary);
+}
+
+html[data-theme='light'] .subtitle {
+  color: var(--text-secondary);
+}
+
+html[data-theme='light'] .eyebrow {
+  color: #2563eb;
+}
+
+html[data-theme='light'] .stat-title {
+  color: #667085;
+}
+
+html[data-theme='light'] .stat-value {
+  color: #172033;
+}
+
+html[data-theme='light'] .card-header p {
+  color: #667085;
+}
+
+
+/* =========================================
+   LIGHT MODE — BUTTONS
+   ========================================= */
+
+html[data-theme='light'] button {
+  color: #344054;
+}
+
+
+/* =========================================
+   LIGHT MODE — TABLES / LISTS
+   ========================================= */
+
+html[data-theme='light'] table {
+  color: #172033;
+}
+
+html[data-theme='light'] th {
+  color: #667085;
+  background: #f8fafc;
+}
+
+html[data-theme='light'] td {
+  color: #344054;
+  border-color: var(--border);
+}
+
+html[data-theme='light'] tr:hover {
+  background: rgba(37, 99, 235, 0.025);
+}
+
+
+/* =========================================
+   LIGHT MODE — INPUTS
+   ========================================= */
+
+html[data-theme='light'] input,
+html[data-theme='light'] select,
+html[data-theme='light'] textarea {
+  color: #172033;
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+html[data-theme='light'] input::placeholder,
+html[data-theme='light'] textarea::placeholder {
+  color: #98a2b3;
+}
+
+
+/* =========================================
+   LIGHT MODE — EVIDENCE / WHITEBOARD
+   ========================================= */
+
+html[data-theme='light'] .evidence,
+html[data-theme='light'] .evidence-card,
+html[data-theme='light'] .evidence-summary,
+html[data-theme='light'] .whiteboard,
+html[data-theme='light'] .whiteboard-card {
+  background: #ffffff;
+  color: #172033;
+  border-color: rgba(15, 23, 42, 0.09);
+}
+
+html[data-theme='light'] pre,
+html[data-theme='light'] code {
+  color: #344054;
+}
+
+
+/* =========================================
+   SMOOTH TRANSITIONS
+   ========================================= */
+
+.sidebar,
+.main,
+.dashboard-card,
+.stat-card,
+.financial-impact-card,
+.system-card,
+.theme-toggle {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}

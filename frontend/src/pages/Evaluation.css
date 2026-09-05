@@ -1,0 +1,403 @@
+/* =========================================
+   RECON.AI — EVALUATION PAGE
+   Matches Dashboard Dark Theme
+========================================= */
+
+.evaluation-page {
+  min-height: 100vh;
+  padding: 32px 48px;
+  background: #080d17;
+  color: #f8fafc;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.evaluation-page .page-header {
+  margin-bottom: 30px;
+}
+
+.evaluation-page .page-header h1 {
+  margin: 0 0 8px;
+  color: #f8fafc;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.evaluation-page .page-header p {
+  margin: 0;
+  color: #7183a3;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   MAIN METRICS
+========================================= */
+
+.evaluation-page .evaluation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.evaluation-page .evaluation-card {
+  min-height: 135px;
+  padding: 22px;
+  box-sizing: border-box;
+
+  background: #0d1420;
+  border: 1px solid #1d2939;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: border-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.evaluation-page .evaluation-card:hover {
+  border-color: #263b5c;
+  transform: translateY(-2px);
+}
+
+.evaluation-page .evaluation-card span {
+  color: #7183a3;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.evaluation-page .evaluation-card strong {
+  margin-top: 18px;
+
+  color: #f8fafc;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.evaluation-page .evaluation-section {
+  margin-bottom: 26px;
+  padding: 24px;
+
+  background: #0d1420;
+  border: 1px solid #1d2939;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+.evaluation-page .evaluation-section h2 {
+  margin: 0 0 20px;
+
+  color: #f8fafc;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.evaluation-page .section-description {
+  margin: -10px 0 20px;
+
+  color: #7183a3;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   RESULT CARDS
+========================================= */
+
+.evaluation-page .result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.evaluation-page .result-card {
+  min-height: 95px;
+  padding: 18px;
+
+  background: #101927;
+  border: 1px solid #1d2939;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.evaluation-page .result-card span {
+  margin-bottom: 10px;
+
+  color: #7183a3;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.evaluation-page .result-card strong {
+  color: #f8fafc;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   EXCEPTION BREAKDOWN
+========================================= */
+
+.evaluation-page .exception-table {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #0a111d;
+  border: 1px solid #1d2939;
+  border-radius: 10px;
+}
+
+
+/* Header */
+
+.evaluation-page .table-header {
+  display: grid;
+  grid-template-columns: 1fr 140px 160px;
+
+  padding: 15px 20px;
+
+  background: #111a29;
+  border-bottom: 1px solid #1d2939;
+
+  box-sizing: border-box;
+}
+
+.evaluation-page .table-header span {
+  color: #7183a3;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.evaluation-page .table-header span:nth-child(2),
+.evaluation-page .table-header span:nth-child(3) {
+  text-align: right;
+}
+
+
+/* Rows */
+
+.evaluation-page .table-row {
+  display: grid;
+  grid-template-columns: 1fr 140px 160px;
+
+  padding: 17px 20px;
+
+  border-bottom: 1px solid #182231;
+
+  box-sizing: border-box;
+}
+
+.evaluation-page .table-row:last-child {
+  border-bottom: none;
+}
+
+.evaluation-page .table-row span {
+  color: #d5ddeb;
+  font-size: 14px;
+}
+
+.evaluation-page .table-row span:first-child {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.evaluation-page .table-row span:nth-child(2),
+.evaluation-page .table-row span:nth-child(3) {
+  text-align: right;
+  color: #9aa9c2;
+}
+
+
+/* =========================================
+   HONEST EXCEPTION LIST
+========================================= */
+
+.evaluation-page .exception-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* Individual exception */
+
+.evaluation-page .exception-item {
+  width: 100%;
+  min-height: 70px;
+
+  padding: 15px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  background: #101927;
+  border: 1px solid #1d2939;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  transition: background 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.evaluation-page .exception-item:hover {
+  background: #121d2d;
+  border-color: #294265;
+}
+
+
+/* Left side */
+
+.evaluation-page .exception-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  min-width: 0;
+}
+
+.evaluation-page .exception-main strong {
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.evaluation-page .exception-main span {
+  padding: 5px 9px;
+
+  background: #172337;
+  border: 1px solid #263b5c;
+  border-radius: 6px;
+
+  color: #70a7ff;
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* Right side */
+
+.evaluation-page .exception-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  white-space: nowrap;
+}
+
+.evaluation-page .exception-meta span {
+  color: #7183a3;
+  font-size: 12px;
+}
+
+.evaluation-page .exception-meta strong {
+  margin-left: 4px;
+  color: #dbe5f5;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   LOADING / ERROR
+========================================= */
+
+.evaluation-page > p {
+  color: #7183a3;
+}
+
+.evaluation-page .section-description + .exception-list > p {
+  padding: 20px;
+
+  margin: 0;
+
+  color: #7183a3;
+  text-align: center;
+
+  background: #101927;
+  border: 1px dashed #26364e;
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .evaluation-page {
+    padding: 28px;
+  }
+
+  .evaluation-page .evaluation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .evaluation-page .result-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .evaluation-page {
+    padding: 20px;
+  }
+
+  .evaluation-page .evaluation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evaluation-page .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evaluation-page .table-header,
+  .evaluation-page .table-row {
+    grid-template-columns: 1fr 70px 90px;
+    padding: 13px 12px;
+  }
+
+  .evaluation-page .exception-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .evaluation-page .exception-meta {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
